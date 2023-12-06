@@ -1,13 +1,10 @@
 #DM Algoprog Exercice 4, Union de deux files chainees :
-
-#Chaine simple
     
 def create_list():
     return {'Start':{'value':None, 'prev':None, 'succ':None}}
 
 def create_cell(value, predecesseur, successeur):
     return {'value':value, 'prev':predecesseur, 'succ':successeur}
-
 
 def change_cell(cell, value, successeur, predecesseur):
     cell['value']=value
