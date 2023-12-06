@@ -1,3 +1,68 @@
-#DM Algoprog Exercice 4, Union de deux files chainées :
-    
+#DM Algoprog Exercice 4, Union de deux files chainees :
 
+#Chaine simple
+    
+def create_list():
+    return {'Start':{'value':None, 'prev':None, 'succ':None}}
+
+def create_cell(value, predecesseur, successeur):
+    return {'value':value, 'prev':predecesseur, 'succ':successeur}
+
+
+def change_cell(cell, value, successeur, predecesseur):
+    cell['value']=value
+    cell['prev']=predecesseur
+    cell['succ']=successeur
+    
+def push_front(l, indice, e):
+    if 'Start' in l.keys() :
+        l['Start']['value']=e
+        l[indice] = l.pop('Start')
+        return
+    for cell_indice in l : 
+        if l[cell_indice]['prev']==None:
+            l[cell_indice]['prev']=indice
+            l[indice]=create_cell(e, None, cell_indice)
+            return
+
+a = create_list()    
+push_front(a,'un', 10)
+push_front(a,'deux', 20)
+push_front(a,'trois', 30)
+push_front(a,'quatre', 40)
+
+
+def remove_front(l):
+    if not l['first'] is None :
+        l['first'] = l['first']['next']
+
+def first_cell(l):
+    return l['first']
+
+def next_cell(cell):
+    return cell['next']
+
+def value_cell(cell):
+    return cell['value']
+
+    
+# Chaine double
+
+def push_back(l, e):
+    """
+    Ajoute l'élément `e` àla fin de la liste `l`.
+    """
+    return NotImplemented
+
+def last_cell(l):
+    """
+    Renvoie la dernière cellule de la liste `l`.
+    """
+    return NotImplemented
+
+
+def prev_cell( cell ):
+    """
+    Retourne la cellule prédécesseur à la cellule `cell`.
+    """
+    raise NotImplementedError()
